@@ -1,17 +1,19 @@
-package SpringBoot.controller.com.controller;
+package SpringBoot.com.controller;
 
 
-import SpringBoot.controller.com.bean.Person;
+import SpringBoot.com.bean.Person;
+import SpringBoot.com.bean.Tree;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class helloWorld {
     @Autowired
     Person person;
+
+    @Autowired
+    Tree tree;
 
     @GetMapping("/hello")
     public String sayHello(){
@@ -20,7 +22,14 @@ public class helloWorld {
 
     @GetMapping("/person")
     public String getPerson(){
+        System.out.println(person.toString());
         return person.toString();
     }
 
+
+    @GetMapping("/tree")
+    public String getTree(){
+        System.out.println(tree.toString());
+        return tree.toString();
+    }
 }

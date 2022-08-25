@@ -31,3 +31,5 @@
     EnableAutoConfiguration：开启自动配置功能，将主配置类所在包下的所有子包扫描到容器。底层调用 Import(AutoConfigurationPackages.Registrar.class)
 
 
+## profile 
+    在默认的application下  指定运行的环境：active 为 ：prod 运行 application-prod的文件
